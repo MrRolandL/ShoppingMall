@@ -1,0 +1,15 @@
+C:\Users\Rolle\source\repos\shoppingMallAtm\shoppingMallAtm\bin\Debug\net6.0\shoppingMallAtm.exe
+C:\Users\Rolle\source\repos\shoppingMallAtm\shoppingMallAtm\bin\Debug\net6.0\shoppingMallAtm.deps.json
+C:\Users\Rolle\source\repos\shoppingMallAtm\shoppingMallAtm\bin\Debug\net6.0\shoppingMallAtm.runtimeconfig.json
+C:\Users\Rolle\source\repos\shoppingMallAtm\shoppingMallAtm\bin\Debug\net6.0\shoppingMallAtm.dll
+C:\Users\Rolle\source\repos\shoppingMallAtm\shoppingMallAtm\bin\Debug\net6.0\shoppingMallAtm.pdb
+C:\Users\Rolle\source\repos\shoppingMallAtm\shoppingMallAtm\obj\Debug\net6.0\shoppingMallAtm.csproj.AssemblyReference.cache
+C:\Users\Rolle\source\repos\shoppingMallAtm\shoppingMallAtm\obj\Debug\net6.0\shoppingMallAtm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rolle\source\repos\shoppingMallAtm\shoppingMallAtm\obj\Debug\net6.0\shoppingMallAtm.AssemblyInfoInputs.cache
+C:\Users\Rolle\source\repos\shoppingMallAtm\shoppingMallAtm\obj\Debug\net6.0\shoppingMallAtm.AssemblyInfo.cs
+C:\Users\Rolle\source\repos\shoppingMallAtm\shoppingMallAtm\obj\Debug\net6.0\shoppingMallAtm.csproj.CoreCompileInputs.cache
+C:\Users\Rolle\source\repos\shoppingMallAtm\shoppingMallAtm\obj\Debug\net6.0\shoppingMallAtm.dll
+C:\Users\Rolle\source\repos\shoppingMallAtm\shoppingMallAtm\obj\Debug\net6.0\refint\shoppingMallAtm.dll
+C:\Users\Rolle\source\repos\shoppingMallAtm\shoppingMallAtm\obj\Debug\net6.0\shoppingMallAtm.pdb
+C:\Users\Rolle\source\repos\shoppingMallAtm\shoppingMallAtm\obj\Debug\net6.0\shoppingMallAtm.genruntimeconfig.cache
+C:\Users\Rolle\source\repos\shoppingMallAtm\shoppingMallAtm\obj\Debug\net6.0\ref\shoppingMallAtm.dll

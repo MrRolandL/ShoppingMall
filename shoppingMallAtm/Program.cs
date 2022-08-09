@@ -106,10 +106,10 @@ static int SelectOption()
 SelectOption();
 
 
-static string BuyAProduct()
+static List <string> BuyAProduct()
 {
-    //Console.WriteLine("How many bananas would you like?");
-    string[,] productList = {
+    string[,] productList =     
+    {
         {"1:Banana", "Banana", "1.24"},
         {"2:Apple", "Apple", "0.57" },
         {"3:Cigarettes", "Cigarettes", "10.8"},
@@ -119,64 +119,47 @@ static string BuyAProduct()
         {"7:Beer", "Beer", "4.95"},
         {"8:Butter", "Butter", "2.75"},
         {"9:Outmeal", "Outmeal", "0.95" },
-        {"10:Cheese", "Cheese", "8.88"} };
+        {"10:Cheese", "Cheese", "8.88"} 
+    };
 
-    Console.WriteLine("Choose what to buy from list:");
-   //for (int i= 0 ; i < choise.GetLength(0); i++)
-   // {
-
-    for (int i = 0; i < productList.GetLength(0); i++) 
-    { 
-        Console.WriteLine("| {0}\t  {1} EUR\t", productList[i, 0], productList[i, 2]);
-    }
-    int choice = Int32.Parse(Console.ReadLine()) -1;
-    string product = productList[choice, 1 ];
-    //Console.WriteLine($"product: {product}");
-    string price = productList[choice, 2];
-    //Console.WriteLine($"price: {price}");
-    string productPrice = product + "\t" + price;
-    string item = productPrice;
-    List<string> list = new List<string>();
-    string
+    int choice;
+    string product, price, productWithPrice; 
+    
+    List<string> basket = new List<string>();
+    
     do
     {
-        
-    Console.WriteLine("Enter a new product or type 0 if your done");
-        if (item == "q")
-        {
-                
-            foreach (string item in list)
-            {
-                Console.Write(item);
-            }
-            break; 
-        }
-        else
-        {
-                list.Add(item);
-        }
-    Console.WriteLine(product);
-    Console.WriteLine(price);
-    }
-    while (item != "0");
-    Console.ReadLine();
-    return item;
-    //}
-}
-string selectedProducts = BuyAProduct();
-//Console.WriteLine($"Exited the buy-a-product function with selectedProducts containing: {selectedProducts}");
+        Console.WriteLine("Select a product from list or type 0 if your done");
+        Console.WriteLine("Choose what to buy from list:");
 
-static void SaveShoppinglistToFile(string selectedProducts)
+        for (int i = 0; i < productList.GetLength(0); i++)
+            Console.WriteLine("| {0}\t  {1} EUR\t", productList[i, 0], productList[i, 2]);
+        choice = Int32.Parse(Console.ReadLine()) - 1;
+        
+        if (choice == -1)
+            break;
+        else 
+        {
+            product = productList[choice, 1];
+            price = productList[choice, 2];
+            productWithPrice = product + price + " EUR";
+            basket.Add(productWithPrice + "\n");
+            Console.WriteLine($"Added following products to basket:\n'{productWithPrice}'");
+        }    
+    }
+    while (choice != -1);
+    return basket;
+}
+
+List <string> selectedProducts = BuyAProduct();
+static void SaveShoppinglistToFile(List <string> selectedProducts)
 {
 
     StreamWriter sw = new StreamWriter("c:\\temp\\shoppinglist.txt");
-//Console.WriteLine($"Entered the SaveShoppinglistToFile function with parameter: {selectedProducts}");
-    sw.WriteLine($"{selectedProducts} EUR");
-//foreach (char item in selectedProducts)
-//{
-//    sw.Write(item);
-//    //Console.WriteLine(item);
-//}
+    foreach (string item in selectedProducts)
+    {
+        sw.Write(item);
+    }
     sw.Close();
 }
 SaveShoppinglistToFile(selectedProducts);

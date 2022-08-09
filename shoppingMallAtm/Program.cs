@@ -106,7 +106,7 @@ static int SelectOption()
 SelectOption();
 
 
-static int BuyAProduct()
+static string BuyAProduct()
 {
     //Console.WriteLine("How many bananas would you like?");
     string[,] productList = {
@@ -122,18 +122,89 @@ static int BuyAProduct()
         {"10:Cheese", "Cheese", "8.88"} };
 
     Console.WriteLine("Choose what to buy from list:");
+   //for (int i= 0 ; i < choise.GetLength(0); i++)
+   // {
+
     for (int i = 0; i < productList.GetLength(0); i++) 
     { 
-        Console.WriteLine(productList[i, 0]);
+        Console.WriteLine("| {0}\t  {1} EUR\t", productList[i, 0], productList[i, 2]);
     }
     int choice = Int32.Parse(Console.ReadLine()) -1;
     string product = productList[choice, 1 ];
+    //Console.WriteLine($"product: {product}");
     string price = productList[choice, 2];
+    //Console.WriteLine($"price: {price}");
+    string productPrice = product + "\t" + price;
+    string item = productPrice;
+    List<string> list = new List<string>();
+    string
+    do
+    {
+        
+    Console.WriteLine("Enter a new product or type 0 if your done");
+        if (item == "q")
+        {
+                
+            foreach (string item in list)
+            {
+                Console.Write(item);
+            }
+            break; 
+        }
+        else
+        {
+                list.Add(item);
+        }
     Console.WriteLine(product);
     Console.WriteLine(price);
-    return 0;
+    }
+    while (item != "0");
+    Console.ReadLine();
+    return item;
+    //}
 }
-BuyAProduct();
+string selectedProducts = BuyAProduct();
+//Console.WriteLine($"Exited the buy-a-product function with selectedProducts containing: {selectedProducts}");
+
+static void SaveShoppinglistToFile(string selectedProducts)
+{
+
+    StreamWriter sw = new StreamWriter("c:\\temp\\shoppinglist.txt");
+//Console.WriteLine($"Entered the SaveShoppinglistToFile function with parameter: {selectedProducts}");
+    sw.WriteLine($"{selectedProducts} EUR");
+//foreach (char item in selectedProducts)
+//{
+//    sw.Write(item);
+//    //Console.WriteLine(item);
+//}
+    sw.Close();
+}
+SaveShoppinglistToFile(selectedProducts);
+
+
+
+static void ReadLotteryAndProductFile()
+{
+    StreamReader sr = new StreamReader("c:\\temp\\shoppinglist.txt");
+    string values;
+
+    while (sr.EndOfStream == false)
+    {
+        values = sr.ReadLine();
+        Console.WriteLine(values);
+    }
+    sr.Close();
+
+}
+ReadLotteryAndProductFile();
+
+//static void Print()
+//{
+//    Double.Parse(Console.WriteLine(values));
+//}
+
+
+
 
 //static void Randomstuff()
 //{

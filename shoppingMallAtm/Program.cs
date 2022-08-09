@@ -142,7 +142,13 @@ static List <string> BuyAProduct()
         {
             product = productList[choice, 1];
             price = productList[choice, 2];
-            productWithPrice = product + price + " EUR";
+            productWithPrice = product;
+            int len = 18 - product.Length;
+            for (int i = 0; i < len; i++)
+            {
+                productWithPrice += " ";
+            }
+            productWithPrice +=  price + " EUR";
             basket.Add(productWithPrice + "\n");
             Console.WriteLine($"Added following products to basket:\n'{productWithPrice}'");
         }    
